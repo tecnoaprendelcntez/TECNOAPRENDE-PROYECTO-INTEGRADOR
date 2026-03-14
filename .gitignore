@@ -1,0 +1,21 @@
+# Maven
+/target/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+
+# Build files
+/build/
+
+# Compiled files
+*.class
+*.jar
+*.war
+*.log
+
+# System files
+.DS_Store
+Thumbs.db

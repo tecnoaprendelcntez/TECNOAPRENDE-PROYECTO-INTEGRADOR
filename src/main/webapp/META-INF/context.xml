@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/ProyectoIntegrador">
+  <Resource name="dbtecnoaprende"
+          auth="Container"
+          type="javax.sql.DataSource"
+          maxTotal="100"
+          maxIdle="30"
+          maxWaitMillis="10000"
+          username="Admin1"
+          password="mdcgr050504"
+          driverClassName="com.mysql.cj.jdbc.Driver"
+          url="jdbc:mysql://localhost:3306/dbtecnoaprende"
+          factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"/>
+</Context>
