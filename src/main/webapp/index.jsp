@@ -62,7 +62,7 @@
             </div>
             <div class="paso paso4">
                 <span class="numero">4</span>
-                <span class="texto">Más información</span>
+                <span class="texto">Más información...</span>
             </div>
         </nav>
 
