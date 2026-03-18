@@ -4,7 +4,7 @@
 <%
     Usuario usuario = (Usuario) session.getAttribute("usuarioLogueado");
     if (usuario == null || !"instructor".equals(usuario.getRol())) {
-        response.sendRedirect("iniciosesion.jsp");
+        response.sendRedirect("login_registro.jsp");
         return;
     }
 %>
