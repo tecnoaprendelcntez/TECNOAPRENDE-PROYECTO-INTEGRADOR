@@ -13,11 +13,12 @@
     <class>Logica.ResultadoEvaluacion</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbtecnoaprende?serverTimezone=America/Mexico_City&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
-      <property name="javax.persistence.jdbc.user" value="Admin1"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="mdcgr050504"/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbtecnoaprende?serverTimezone=America/Mexico_City&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="javax.persistence.jdbc.user" value="Admin1"/>
+        <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="javax.persistence.jdbc.password" value="mdcgr050504"/>
+        <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        <property name="eclipselink.logging.level" value="FINE"/>
     </properties>
   </persistence-unit>
 </persistence>
