@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import Logica.Actividad;
@@ -22,7 +21,7 @@ public class ActividadJpaController implements Serializable {
     }
 
     public ActividadJpaController() {
-        emf = Persistence.createEntityManagerFactory("JavaWebPU");
+        emf = JPAUtil.getEMF();
     }
 
     public EntityManager getEntityManager() {

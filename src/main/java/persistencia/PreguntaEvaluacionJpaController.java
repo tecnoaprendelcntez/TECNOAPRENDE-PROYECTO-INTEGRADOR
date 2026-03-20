@@ -19,7 +19,7 @@ public class PreguntaEvaluacionJpaController implements Serializable {
     }
     
     public PreguntaEvaluacionJpaController() {
-        emf = Persistence.createEntityManagerFactory("JavaWebPU");
+        emf = JPAUtil.getEMF();
     }
 
     public void create(PreguntaEvaluacion pregunta) {
