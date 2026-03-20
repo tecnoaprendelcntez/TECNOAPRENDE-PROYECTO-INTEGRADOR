@@ -14,17 +14,16 @@ public class JPAUtil {
 
             Map<String, String> props = new HashMap<>();
 
-            String host = System.getenv("MYSQLHOST");
+            String mysqlUrl = System.getenv("MYSQL_URL");
 
-            if (host != null) {
+            if (mysqlUrl != null) {
                 //Railway
-                String port = System.getenv("MYSQLPORT");
-                String db = System.getenv("MYSQLDATABASE");
+
                 String user = System.getenv("MYSQLUSER");
                 String password = System.getenv("MYSQLPASSWORD");
 
-                String url = "jdbc:mysql://" + host + ":" + port + "/" + db +
-                        "?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8";
+                String url = mysqlUrl.replace("mysql://", "jdbc:mysql://")
+                        + "?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8";
 
                 props.put("javax.persistence.jdbc.url", url);
                 props.put("javax.persistence.jdbc.user", user);
@@ -32,6 +31,7 @@ public class JPAUtil {
 
             } else {
                 //Local
+
                 props.put("javax.persistence.jdbc.url",
                         "jdbc:mysql://localhost:3306/dbtecnoaprende?serverTimezone=America/Mexico_City&useUnicode=true&characterEncoding=UTF-8");
                 props.put("javax.persistence.jdbc.user", "Admin1");
