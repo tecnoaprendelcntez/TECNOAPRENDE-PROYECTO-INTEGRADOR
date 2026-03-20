@@ -10,8 +10,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.util.List;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "instructor")
 public class Instructor implements Serializable {
 
     @Id
