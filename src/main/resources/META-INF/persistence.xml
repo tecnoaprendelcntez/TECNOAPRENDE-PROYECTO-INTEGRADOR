@@ -18,7 +18,6 @@
         <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="javax.persistence.jdbc.password" value="mdcgr050504"/>
         <property name="javax.persistence.schema-generation.database.action" value="create"/>
-        <property name="eclipselink.logging.level" value="FINE"/>
     </properties>
   </persistence-unit>
 </persistence>

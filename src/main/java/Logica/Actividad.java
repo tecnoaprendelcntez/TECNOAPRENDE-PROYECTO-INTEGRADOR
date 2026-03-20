@@ -1,3 +1,4 @@
+//Actividad.java
 package Logica;
 
 import java.io.Serializable;
