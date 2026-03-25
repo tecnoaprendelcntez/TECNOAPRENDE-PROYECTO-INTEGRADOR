@@ -20,11 +20,13 @@
       <title>TECNOAPRENDE</title>
       <link rel="stylesheet" href="styles.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <!-- Encabezado -->
         <header class="encabezado">
           <img src="images/ITSZ-LCNTEZ.png" alt="Encabezado de logos" class="imagen-encabezado">
+          <img src="images/tecnoaprende.png" alt="Logo TecnoAprende" class="tecnoaprende">
           <div class="acciones">
               <c:choose>
                 <c:when test="${sessionScope.usuarioLogueado == null}">
@@ -80,8 +82,8 @@
                 <div class="slide">
                     <img src="images/slide2.jpg" alt="Certificados">
                     <div class="texto-slide">
-                        <h2>Certifícate y mejora tu perfil</h2>
-                        <p>Conocimiento práctico y accesible</p>
+                        <h2>Cursa y mejora tus conocimientos</h2>
+                        <p>Conocimientos prácticos</p>
                     </div>
                 </div>
 

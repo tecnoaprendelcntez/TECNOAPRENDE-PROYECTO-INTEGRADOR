@@ -15,12 +15,14 @@
     <title>Información Adicional - TecnoAprende</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
     <!-- Encabezado con imagen y sesión -->
     <header class="encabezado">
         <img src="images/ITSZ-LCNTEZ.png" alt="Encabezado de logos" class="imagen-encabezado">
+        <img src="images/tecnoaprende.png" alt="Logo TecnoAprende" class="tecnoaprende">
         <div class="acciones">
             <p><strong><%= usuario.getNom_usuario() %></strong></p>
             <a href="SvCerrarSesion"><button>Cerrar sesión</button></a>

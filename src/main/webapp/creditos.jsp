@@ -20,7 +20,7 @@
 
             <!-- Integrante 1 -->
             <div class="creditos-card">
-                <img src="images/fotos/brian.jpg" alt="Foto">
+                <img src="images/fotos/brian.jpeg" alt="Foto">
                 <h3>Brian Flores Zavaleta</h3>
                 <h4>Líder del Equipo</h4>
                 <p class="info">Estudiante de Ingeniería en Sistemas Computacionales</p>
@@ -28,25 +28,25 @@
 
             <!-- Integrante 2 -->
             <div class="creditos-card">
-                <img src="images/fotos/orlando.jpg" alt="Foto">
+                <img src="images/fotos/orlando.jpeg" alt="Foto">
                 <h3>Víctor Orlando Contreras Cabrera</h3>
                 <p class="info">Estudiante de Ingeniería en Sistemas Computacionales</p>
             </div>
 
             <!-- Integrante 3 -->
             <div class="creditos-card">
-                <img src="images/fotos/ximena.jpg" alt="Foto">
+                <img src="images/fotos/ximena.jpeg" alt="Foto">
                 <h3>Ximena Rosario Méndez Antemate</h3>
                 <p class="info">Estudiante de Ingeniería en Sistemas Computacionales</p>
             </div>
 
         </div>
 
-        <h2>Asesor del Proyecto</h2>
+        <h2>Asesora del Proyecto</h2>
         <div class="creditos-card">
             <div class="card">
-                <img src="images/fotos/octavio.jpg" alt="Asesor">
-                <h3>ISC Octavio Martínez Escamilla</h3>
+                <img src="images/fotos/irene.jpeg" alt="Asesor">
+                <h3>Mtra. Irene Gutíerrez Mora</h3>
                 <p>Asesor Académico y Técnico</p>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <img src="images/fotos/logoITSZ.jpg" class="creditos-logo">
             <p>Instituto Tecnológico Superior de Zongolica</p>
             <p>Ingeniería en Sistemas Computacionales</p>
-            <p>Proyecto desarrollado en 2024 - 2025</p>
+            <p>Proyecto desarrollado en 2024 - 2026</p>
         </div>
 
     </div>

@@ -27,12 +27,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Acceso / Registro — TECNOAPRENDE</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     </head>
 
     <body>
 
         <header class="encabezado">
             <img src="images/ITSZ-LCNTEZ.png" alt="Encabezado de logos" class="imagen-encabezado">
+            <img src="images/tecnoaprende.png" alt="Logo TecnoAprende" class="tecnoaprende">
             <div class="acciones">
                 <a href="index.jsp"><button>Panel Principal</button></a>
             </div>
