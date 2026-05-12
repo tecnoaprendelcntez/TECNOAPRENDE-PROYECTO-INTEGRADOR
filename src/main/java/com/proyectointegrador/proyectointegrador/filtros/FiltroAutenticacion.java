@@ -50,8 +50,17 @@ public class FiltroAutenticacion implements Filter {
             return;
         }
 
-        // Verificar que no se acceda al panel de instructor sin el rol correcto
         String rutaSolicitada = httpRequest.getServletPath();
+
+        // Si la contraseña fue restablecida por un instructor, obligar al
+        // usuario a cambiarla antes de acceder a cualquier otra página.
+        if (usuario.isRequiereCambioContrasena()
+                && !"/cambiarContrasena.jsp".equals(rutaSolicitada)) {
+            httpResponse.sendRedirect(httpRequest.getContextPath() + "/cambiarContrasena.jsp");
+            return;
+        }
+
+        // Verificar que no se acceda al panel de instructor sin el rol correcto
         if ("/panelInstructor.jsp".equals(rutaSolicitada) && !"instructor".equals(usuario.getRol())) {
             httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN, "Acceso denegado.");
             return;

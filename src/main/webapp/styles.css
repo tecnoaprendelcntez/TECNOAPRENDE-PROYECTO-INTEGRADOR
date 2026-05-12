@@ -81,6 +81,31 @@ body {
     transition: transform 0.6s ease-in-out;
 }
 
+.form-inline-reset {
+    display: inline;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    width: auto;
+}
+
+.acciones-estudiante {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+
+.form-cambiar-password {
+    background-color: #01391C;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    margin: 25px auto 0 auto;
+}
 .tab-content {
     width: 50%; 
     flex-shrink: 0;
@@ -230,6 +255,79 @@ p.progreso{
 
 .acciones form {
     all: unset;
+}
+
+/* Contenedor general del login admin */
+.login-admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* Título superior */
+.login-admin-container .formulario {
+    color: #01391C;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+/* Formulario específico */
+.login-admin-form {
+    background-color: #01391C;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    text-align: left;
+}
+
+/* Título interno */
+.login-admin-form h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+/* Labels */
+.login-admin-form label {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Inputs */
+.login-admin-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* Botón */
+.login-admin-form .boton_iniciosesion_registro {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #026d34;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.login-admin-form .boton_iniciosesion_registro:hover {
+    background-color: #11d664;
+    color: #000;
 }
 
 .titulo {

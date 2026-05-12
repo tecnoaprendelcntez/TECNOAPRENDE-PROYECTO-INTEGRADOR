@@ -3,10 +3,19 @@
 <%@page import="Logica.Usuario"%>
 <%
     Usuario admin = (Usuario) session.getAttribute("usuarioLogueado");
+
     if (admin == null || !"admin".equalsIgnoreCase(admin.getRol())) {
         response.sendRedirect("loginAdmin.jsp");
         return;
     }
+
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
+
+    response.setHeader("X-Frame-Options", "DENY");
+    response.setHeader("X-Content-Type-Options", "nosniff");
+    response.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,7 +30,10 @@
             <img src="images/ITSZ-LCNTEZ.png" alt="Encabezado de logos" class="imagen-encabezado">
             <div class="acciones">
                 <p>Bienvenido, <strong><%= admin.getNom_usuario() %></strong> (Administrador)</p>
-                <a href="SvCerrarSesion"><button>Cerrar sesión</button></a>
+                <form action="SvCerrarSesion" method="POST" style="display:inline;">
+                    <input type="hidden" name="csrfToken" value="<%= session.getAttribute("csrfToken") %>">
+                    <button type="submit">Cerrar sesión</button>
+                </form>
             </div>
         </header>
                 

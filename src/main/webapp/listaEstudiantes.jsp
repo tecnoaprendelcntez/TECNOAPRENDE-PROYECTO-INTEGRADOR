@@ -12,6 +12,10 @@
     int idCurso = Integer.parseInt(request.getParameter("idCurso"));
     Controladora control = new Controladora();
     List<Usuario> estudiantes = control.traerEstudiantesPorCurso(idCurso);
+
+    String csrfToken = (String) session.getAttribute("csrfToken");
+    String tempPass = request.getParameter("temp");
+    String tempUser = request.getParameter("tempUser");
 %>
 <!DOCTYPE html>
 <html>
@@ -33,14 +37,33 @@
     <main class="contenedor_lista">
         <a href="listaCursosInstructor.jsp"><button class="registrar">Lista de Cursos</button></a>
     <h1>Estudiantes</h1>
+
+    <% if (tempPass != null && tempUser != null) { %>
+        <div style="background:#d4edda;border:1px solid #c3e6cb;color:#155724;padding:12px;border-radius:6px;margin:10px 0;">
+            <strong>Contraseña temporal generada para <%= tempUser %>:</strong>
+            <code style="background:#fff;padding:4px 8px;border-radius:4px;font-size:1.1em;"><%= tempPass %></code>
+            <br>
+            Comparte esta contraseña con el alumno. El sistema le pedirá cambiarla al iniciar sesión. Esta contraseña se muestra una sola vez.
+        </div>
+    <% } %>
+
     <ul class="lista-estudiantes">
         <% for (Usuario est : estudiantes) { %>
             <li>
                 <span class="estudiante-nombre"><%= est.getNombre() %> <%= est.getApellidos() %></span>
+                <div class="acciones-estudiante">
                 <button class="boton-estudiante" 
                         onclick="location.href='listaProgresoInstructor.jsp?idCurso=<%=idCurso%>&idUsuario=<%=est.getId()%>'">
                     Ver Progreso
                 </button>
+                <form action="SvRestablecerContrasena" method="post" class="form-inline-reset"
+                      onsubmit="return confirm('¿Restablecer la contraseña de <%= est.getNombre() %> <%= est.getApellidos() %>? Se generará una contraseña temporal.');">
+                    <input type="hidden" name="csrfToken" value="<%= csrfToken %>">
+                    <input type="hidden" name="idUsuario" value="<%= est.getId() %>">
+                    <input type="hidden" name="idCurso" value="<%= idCurso %>">
+                    <button type="submit" class="boton-estudiante">Restablecer contraseña</button>
+                </form>
+                </div>
             </li>
         <% } %>
     </ul>

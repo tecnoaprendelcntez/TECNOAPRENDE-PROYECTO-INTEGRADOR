@@ -23,6 +23,7 @@ public class Usuario implements Serializable {
     private String nom_usuario;
     private String rol;
     private String contrasena;
+    private boolean requiereCambioContrasena;
     
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Instructor instructor;
@@ -91,6 +92,14 @@ public class Usuario implements Serializable {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public boolean isRequiereCambioContrasena() {
+        return requiereCambioContrasena;
+    }
+
+    public void setRequiereCambioContrasena(boolean requiereCambioContrasena) {
+        this.requiereCambioContrasena = requiereCambioContrasena;
     }
 
     public Instructor getInstructor() {

@@ -92,7 +92,13 @@ public class SvInicioSesion extends HttpServlet {
 
         if (credencialesCorrectas) {
             // --- 4. INICIO DE SESIÓN EXITOSO ---
-
+            if ("admin".equalsIgnoreCase(usuarioEncontrado.getRol())) {
+                request.setAttribute("error", 
+                    "Acceso Denegado.");
+                request.getRequestDispatcher("login_registro.jsp").forward(request, response);
+                return;
+            }
+            
             // Invalidar sesión anterior y crear una nueva (previene Session Fixation)
             session.invalidate();
             session = request.getSession(true);
@@ -106,6 +112,13 @@ public class SvInicioSesion extends HttpServlet {
 
             // Tiempo de inactividad máximo: 30 minutos
             session.setMaxInactiveInterval(30 * 60);
+
+            // Si la contraseña fue restablecida por un instructor, forzar
+            // cambio de contraseña antes de continuar a cualquier otra página.
+            if (usuarioEncontrado.isRequiereCambioContrasena()) {
+                response.sendRedirect("cambiarContrasena.jsp");
+                return;
+            }
 
             // Redirigir según rol
             switch (usuarioEncontrado.getRol()) {
