@@ -228,49 +228,94 @@
                 s.style.display = s.style.display === "block" ? "none" : "block";
             }
             
-            // Contenidos (documentos y galerías)
+            // Contenidos (documentos y actividades) usando Google Drive en modo embebido
             const contenidos = {
-                /* 1. Curso Principiante */
+                /* =========================
+                   1. CURSO PRINCIPIANTE
+                   ========================= */
+
+                // 1.1 Introducción a la computadora
                 "1.1.doc": `<div class="visor-pdf">
-                                <iframe src="docs/CursoPrincipiante/Documentos/1.1.CursoPrincipiante-doc.pdf#zoom=page-width"></iframe>
+                                <iframe 
+                                    src="https://drive.google.com/file/d/1-rdyyWl0ZDV1pUYRBAC0K1zaUZiFfM_m/preview"
+                                    allow="autoplay">
+                                </iframe>
                             </div>`,
                 "1.1.actividad": `<div class="visor-pdf">
-                                    <iframe src="docs/CursoPrincipiante/Actividades/1.1.CursoPrincipiante-act.pdf"></iframe>
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/12Tk9Ej7Y70EfqpVdDc4sO_kllH4aQOgr/preview"
+                                        allow="autoplay">
+                                    </iframe>
                                   </div>`,
 
+                // 1.2 Encendido y apagado
                 "1.2.doc": `<div class="visor-pdf">
-                                <iframe src="docs/CursoPrincipiante/Documentos/1.2.CursoPrincipiante-doc.pdf"></iframe>
+                                <iframe 
+                                    src="https://drive.google.com/file/d/1N3F0vNxwLxUK2uBt56BVmetQVnJWCW7J/preview"
+                                    allow="autoplay">
+                                </iframe>
                             </div>`,
                 "1.2.actividad": `<div class="visor-pdf">
-                                    <iframe src="docs/CursoPrincipiante/Actividades/1.2.CursoPrincipiante-act.pdf"></iframe>
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/18d-4PVANKzD60DCDCv8qk1ZGoEna9EJV/preview"
+                                        allow="autoplay">
+                                    </iframe>
                                   </div>`,
 
+                // 1.3 Interfaz gráfica
                 "1.3.doc": `<div class="visor-pdf">
-                                <iframe src="docs/CursoPrincipiante/Documentos/1.3.CursoPrincipiante-doc.pdf"></iframe>
+                                <iframe 
+                                    src="https://drive.google.com/file/d/1iX6dO-pNYsNNS-x6jzbOJ37Kf12zOifX/preview"
+                                    allow="autoplay">
+                                </iframe>
                             </div>`,
                 "1.3.actividad": `<div class="visor-pdf">
-                                    <iframe src="docs/CursoPrincipiante/Actividades/1.3.CursoPrincipiante-act.pdf"></iframe>
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1r4lNBztJZ0RbSdr3WRmFwkvtYN-X7-Gv/preview"
+                                        allow="autoplay">
+                                    </iframe>
                                   </div>`,
 
+                // 1.4 Uso del ratón
                 "1.4.doc": `<div class="visor-pdf">
-                                <iframe src="docs/CursoPrincipiante/Documentos/1.4.CursoPrincipiante-doc.pdf"></iframe>
+                                <iframe 
+                                    src="https://drive.google.com/file/d/1r0wO19I7Ff0dLy1S-1R4hzwtmbBvTaUQ/preview"
+                                    allow="autoplay">
+                                </iframe>
                             </div>`,
                 "1.4.actividad": `<div class="visor-pdf">
-                                    <iframe src="docs/CursoPrincipiante/Actividades/1.4.CursoPrincipiante-act.pdf"></iframe>
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1qEs5voiKs5d1jwkHw_fTY-DB7_kcjdVu/preview"
+                                        allow="autoplay">
+                                    </iframe>
                                   </div>`,
 
+                // 1.5 Teclado
                 "1.5.doc": `<div class="visor-pdf">
-                                <iframe src="docs/CursoPrincipiante/Documentos/1.5.CursoPrincipiante-doc.pdf"></iframe>
+                                <iframe 
+                                    src="https://drive.google.com/file/d/1pD4p6OCmYYGm0iQnLIMeCGhkOHfzh2y8/preview"
+                                    allow="autoplay">
+                                </iframe>
                             </div>`,
                 "1.5.actividad": `<div class="visor-pdf">
-                                    <iframe src="docs/CursoPrincipiante/Actividades/1.5.CursoPrincipiante-act.pdf"></iframe>
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1WnrZ9L1Y-C1FiCIJuXFWJR8fzwLgrk5b/preview"
+                                        allow="autoplay">
+                                    </iframe>
                                   </div>`,
 
+                // 1.6 Exploración de archivos
                 "1.6.doc": `<div class="visor-pdf">
-                                <iframe src="docs/CursoPrincipiante/Documentos/1.6.CursoPrincipiante-doc.pdf"></iframe>
+                                <iframe 
+                                    src="https://drive.google.com/file/d/1qcFQy5bEXpAf2OtbR7EVQCJsHteFbuVk/preview"
+                                    allow="autoplay">
+                                </iframe>
                             </div>`,
                 "1.6.actividad": `<div class="visor-pdf">
-                                    <iframe src="docs/CursoPrincipiante/Actividades/1.6.CursoPrincipiante-act.pdf"></iframe>
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1jlDNWEaq3BxeArZFL8tQsf-umvl4ge5w/preview"
+                                        allow="autoplay">
+                                    </iframe>
                                   </div>`
             };
             
