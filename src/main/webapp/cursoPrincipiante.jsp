@@ -236,8 +236,7 @@
 
                 // 1.1 Introducción a la computadora
                 "1.1.doc": `<div class="visor-pdf">
-                                <iframe 
-                                    src="https://drive.google.com/file/d/1-rdyyWl0ZDV1pUYRBAC0K1zaUZiFfM_m/preview"
+                                <iframe src="https://drive.google.com/file/d/1-rdyyWl0ZDV1pUYRBAC0K1zaUZiFfM_m/preview" 
                                     allow="autoplay">
                                 </iframe>
                             </div>`,

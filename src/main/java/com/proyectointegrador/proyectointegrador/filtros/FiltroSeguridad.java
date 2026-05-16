@@ -36,37 +36,54 @@ public class FiltroSeguridad implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpServletRequest httpRequest = (HttpServletRequest) request;
 
-        // --- CABECERAS DE SEGURIDAD ---
+        // =========================
+        // CABECERAS DE SEGURIDAD
+        // =========================
 
-        // Previene que el navegador "adivine" el tipo de contenido (MIME sniffing)
+        // Evita que el navegador intente adivinar el tipo MIME
         httpResponse.setHeader("X-Content-Type-Options", "nosniff");
 
-        // Previene que la página sea embebida en un iframe (clickjacking)
+        // Impide que TU sitio sea embebido dentro de iframes de otros sitios
+        // (protección contra clickjacking)
+        // Esto NO impide que TU sitio embeba Google Drive o YouTube.
         httpResponse.setHeader("X-Frame-Options", "DENY");
 
-        // Activa el filtro XSS del navegador (compatibilidad con navegadores antiguos)
+        // Protección XSS para navegadores antiguos
         httpResponse.setHeader("X-XSS-Protection", "1; mode=block");
 
-        // Fuerza HTTPS por 1 año en todos los subdominios (solo activar si usas HTTPS)
-        // Descomenta esta línea cuando tu servidor tenga certificado SSL:
-        // httpResponse.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
-
-        // Política de referencia: no enviar la URL completa a sitios externos
+        // Política de referencia
         httpResponse.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
 
-        // Content Security Policy: restringe los orígenes de recursos permitidos.
-        // Ajusta los dominios según los recursos externos que uses en tu aplicación.
+        // Forzar HTTPS (descomentar cuando uses SSL en todos los entornos)
+        // httpResponse.setHeader("Strict-Transport-Security",
+        //         "max-age=31536000; includeSubDomains");
+
+        // =========================
+        // CONTENT SECURITY POLICY
+        // =========================
+        // Permite:
+        // - Scripts desde jsDelivr (Chart.js)
+        // - Estilos y fuentes desde cdnjs (Font Awesome)
+        // - Imágenes locales, data URI y externas HTTPS
+        // - Iframes desde Google Drive y YouTube
+        // - Bloquea que otros sitios embeban tu aplicación
         httpResponse.setHeader("Content-Security-Policy",
             "default-src 'self'; "
-            + "script-src 'self' 'unsafe-inline'; "
+            + "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
             + "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; "
             + "font-src 'self' https://cdnjs.cloudflare.com; "
-            + "img-src 'self' data:; "
+            + "img-src 'self' data: https:; "
+            + "frame-src 'self' "
+                + "https://drive.google.com "
+                + "https://www.youtube.com "
+                + "https://www.youtube-nocookie.com; "
             + "frame-ancestors 'none';"
         );
 
-        // Deshabilitar caché para páginas dinámicas
-        // (Esto se complementa con lo que ya tienes en index.jsp)
+        // =========================
+        // CONTROL DE CACHÉ
+        // =========================
+        // Evita que páginas dinámicas queden almacenadas en caché
         String uri = httpRequest.getRequestURI();
         if (uri.endsWith(".jsp") || uri.endsWith("/")) {
             httpResponse.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -74,6 +91,7 @@ public class FiltroSeguridad implements Filter {
             httpResponse.setDateHeader("Expires", 0);
         }
 
+        // Continuar con la petición
         chain.doFilter(request, response);
     }
 
